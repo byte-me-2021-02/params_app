@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     # demo examples
     get "/query" => "params_examples#query_example"
     get "/segment_param/:city" => "params_examples#segment"
+    post "/body_parameter" => "params_examples#body"
 
 
 

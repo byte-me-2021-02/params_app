@@ -41,4 +41,10 @@ class Api::ParamsExamplesController < ApplicationController
     params[:city]
     render 'segment.json.jb'
   end
+
+  def body
+    @city = params[:city]
+    render 'body.json.jb'
+  end
+  
 end
