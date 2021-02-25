@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   namespace :api do
     # demo examples
     get "/query" => "params_examples#query_example"
+    get "/segment_param/:city/:state" => "params_examples#segment"
 
 
 

@@ -35,4 +35,8 @@ class Api::ParamsExamplesController < ApplicationController
     # return an appropriate message
     render 'guess.json.jb'
   end
+
+  def segment
+    render 'segment.json.jb'
+  end
 end
