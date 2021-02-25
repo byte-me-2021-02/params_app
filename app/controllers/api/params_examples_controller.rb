@@ -37,6 +37,22 @@ class Api::ParamsExamplesController < ApplicationController
   end
 
   def segment
+    params[:city]
     render 'segment.json.jb'
+  end
+
+  def segment_guess
+    @user_guess = params[:user_guess].to_i
+    # binding.pry
+
+    # figure out if it's the right number
+    if @user_guess > 35
+      @message = "you guessed too high"
+    elsif @user_guess < 35
+      @message = "you guessed too low"
+    elsif @user_guess == 35
+      @message = "nice job you did the thing"
+    end
+    render 'segment_guess.json.jb'
   end
 end
