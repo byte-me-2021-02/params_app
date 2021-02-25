@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     get "/name" => "params_examples#name"
     get "/guess_query" => "params_examples#guess"
     get "/guess_segment/:guess" => "params_examples#guess"
-
+    post "/guess_body" => "params_examples#guess"
+    post "/secret_codes" => "params_examples#secret"
   end
 end

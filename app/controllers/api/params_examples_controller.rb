@@ -46,5 +46,15 @@ class Api::ParamsExamplesController < ApplicationController
     @city = params[:city]
     render 'body.json.jb'
   end
+
+  def secret
+    # if username is hugh and password is swordfish, show a message
+    if params[:username] == "hugh" && params[:password] == "swordfish"
+      @message = "Valid Credentials"
+    else
+      @message = "Invalid Credentials"
+    end
+    render 'shhhh.json.jb'
+  end
   
 end
