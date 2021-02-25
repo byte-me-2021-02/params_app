@@ -12,12 +12,12 @@ class Api::ParamsExamplesController < ApplicationController
     # p params[:name].upcase
     # send back to user
     @name = params[:name].upcase
+    # binding.pry
     if @name[0] == "A"
       @message = "Your name begins with A"
     else
       @message = "I don't have a message for you..."
     end
-
     render 'name.json.jb'
   end
 
