@@ -23,13 +23,14 @@ class Api::ParamsExamplesController < ApplicationController
 
   def guess
     # take in user input
-    @user_guess = params[:guess].to_i
+    user_guess = params[:guess].to_i    
     # figure out if it's the right number
-    if @user_guess > 35
+    correct_answer = 35
+    if user_guess > correct_answer
       @message = "you guessed too high"
-    elsif @user_guess < 35
+    elsif user_guess < correct_answer
       @message = "you guessed too low"
-    elsif @user_guess == 35
+    elsif user_guess == correct_answer
       @message = "nice job you did the thing"
     end
     # return an appropriate message
@@ -39,20 +40,5 @@ class Api::ParamsExamplesController < ApplicationController
   def segment
     params[:city]
     render 'segment.json.jb'
-  end
-
-  def segment_guess
-    @user_guess = params[:user_guess].to_i
-    # binding.pry
-
-    # figure out if it's the right number
-    if @user_guess > 35
-      @message = "you guessed too high"
-    elsif @user_guess < 35
-      @message = "you guessed too low"
-    elsif @user_guess == 35
-      @message = "nice job you did the thing"
-    end
-    render 'segment_guess.json.jb'
   end
 end

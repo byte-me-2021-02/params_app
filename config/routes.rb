@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     # exercise examples
     get "/name" => "params_examples#name"
     get "/guess_query" => "params_examples#guess"
-    get "/guess_segment/:user_guess" => "params_examples#segment_guess"
+    get "/guess_segment/:guess" => "params_examples#guess"
 
   end
 end
